@@ -28,11 +28,9 @@ class Example(QtWidgets.QMainWindow):
         if self.flag:
             qp = QPainter()
             qp.begin(self)
-            qp.setPen(QColor(250, 255, 0))
-            x, y, w, h = randint(0, SCREEN_SIZE[0]),\
-                         randint(0, SCREEN_SIZE[1]),\
-                         randint(10, 70),\
-                         randint(10, 70)
+            qp.setBrush(QColor(250, 255, 0))
+            x, y = randint(0, SCREEN_SIZE[0]), randint(0, SCREEN_SIZE[1])
+            w = h = randint(10, 70)
             qp.drawEllipse(x, y, w, h)
             qp.end()
             self.flag = False
